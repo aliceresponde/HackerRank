@@ -1,10 +1,13 @@
 package com.company;
 
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
      private static int sumA ;
      private static int sumB ;
+
 
      private static int matrix[][];
      private static int diagonal1 =0;
@@ -15,10 +18,72 @@ public class Main {
 //        tripleteChallenge();
 //        veryBigSum();
 //        diagonalDifference();
+//        leftRotation();
 
+//todo check statement
+//        minFraction();
+        return;
     }
 
-//    ===========================DIAGONAL DIFF ==================================================
+//    ============================LEFT  ROTACION============================================
+
+    private static void leftRotation() {
+        Scanner in = new Scanner(System.in);
+        int size = in.nextInt();
+        int leftRotation = in.nextInt();
+        int array[] = new int[size];
+        int i ;
+        fillArray(in, size, array);
+        in.close();
+        StringBuffer buffer =new StringBuffer("");
+        fillOutputBuffer(size, leftRotation, array, buffer);
+        System.out.println(buffer);
+    }
+
+    private static void fillOutputBuffer(int size, int leftRotation, int[] array, StringBuffer buffer) {
+        for (int index = 0; index  < size ; index++){
+            int pos = (index + leftRotation) % size;
+            buffer.append(array[pos]);
+            buffer.append(" ");
+        }
+    }
+
+    private static void fillArray(Scanner in, int size, int[] array) {
+        int i;
+        for(i = 0 ; i < size; i++){
+            array[i]= in.nextInt();
+        }
+    }
+
+//    ===================================================minFraction================================================
+
+    private static void minFraction() {
+        Scanner in = new Scanner(System.in);
+
+        double denominator = in.nextDouble();
+        double nPositives =0;
+        double nNegatives = 0;
+        double nNeutral = 0;
+        int aux;
+
+        while (in.hasNext()){
+            aux = in.nextInt();
+            if (aux < 0){
+                nNegatives++;
+            }else if(aux == 0 ) {
+                nNeutral++;
+            }else {
+                nPositives ++;
+            }
+        }
+
+
+        System.out.println((double) nPositives/denominator);
+        System.out.println((double) nNeutral/denominator);
+        System.out.println((double) nNegatives/denominator);
+    }
+
+    //    ===========================DIAGONAL DIFF ==================================================
     private static void diagonalDifference() {
         Scanner in = new Scanner(System.in);
         int tam = in.nextInt();
