@@ -18,10 +18,8 @@ public class Main {
 //        tripleteChallenge();
 //        veryBigSum();
 //        diagonalDifference();
-//        leftRotation();
-
-//todo check statement
 //        minFraction();
+//        leftRotation();
         return;
     }
 
@@ -66,7 +64,7 @@ public class Main {
         double nNeutral = 0;
         int aux;
 
-        while (in.hasNext()){
+        for(int i = 0 ; i < denominator; i++){
             aux = in.nextInt();
             if (aux < 0){
                 nNegatives++;
@@ -78,9 +76,9 @@ public class Main {
         }
 
 
-        System.out.println((double) nPositives/denominator);
-        System.out.println((double) nNeutral/denominator);
-        System.out.println((double) nNegatives/denominator);
+        System.out.println( nPositives/denominator);
+        System.out.println( nNegatives/denominator);
+        System.out.println( nNeutral/denominator);
     }
 
     //    ===========================DIAGONAL DIFF ==================================================
